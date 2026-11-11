@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#fdf1f3" />
+		<meta
+			name="description"
+			content="A little birthday surprise for Syarifah Syazwani."
+		/>
+		<title>Happy Birthday, Syarifah Syazwani</title>
+		<link
+			rel="icon"
+			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<canvas id="confettiCanvas" aria-hidden="true"></canvas>
+		<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+		<header class="hero" id="home">
+			<div class="hero-glow" aria-hidden="true"></div>
+			<div class="hero-content">
+				<p class="eyebrow">To my favourite person</p>
+				<h1 class="hero-name">
+					Syarifah<br /><span class="hero-name-line">Syazwani</span>
+				</h1>
+				<div class="age-badge">
+					<span class="age-number">25</span>
+					<span class="age-text">years of you</span>
+				</div>
+				<p class="hero-date">12 November 2026</p>
+				<p class="hero-sub">
+					A little corner of the internet, made just for you.
+				</p>
+				<a
+					class="scroll-cue"
+					href="#countdown"
+					aria-label="Scroll to the next section"
+				>
+					<span class="scroll-cue-text">scroll</span>
+					<span class="scroll-cue-arrow" aria-hidden="true"></span>
+				</a>
+			</div>
+		</header>
+
+		<main>
+			<section class="countdown-section" id="countdown">
+				<div class="countdown-card reveal">
+					<p class="eyebrow" id="countdownEyebrow">Counting down to</p>
+					<h2 class="section-title" id="countdownTitle">Your special day</h2>
+					<div class="countdown-grid" id="countdownGrid">
+						<div class="countdown-unit">
+							<span class="countdown-value" id="cdDays">0</span>
+							<span class="countdown-label">days</span>
+						</div>
+						<div class="countdown-unit">
+							<span class="countdown-value" id="cdHours">0</span>
+							<span class="countdown-label">hours</span>
+						</div>
+						<div class="countdown-unit">
+							<span class="countdown-value" id="cdMinutes">0</span>
+							<span class="countdown-label">minutes</span>
+						</div>
+						<div class="countdown-unit">
+							<span class="countdown-value" id="cdSeconds">0</span>
+							<span class="countdown-label">seconds</span>
+						</div>
+					</div>
+					<p class="countdown-note" id="countdownNote">
+						Until we celebrate you all over again.
+					</p>
+				</div>
+			</section>
+
+			<section class="gallery-section" id="gallery">
+				<div class="section-head reveal">
+					<p class="eyebrow">Moments I keep</p>
+					<h2 class="section-title">Us, in pictures</h2>
+					<p class="section-sub">
+						Swipe through a few of my favourite memories with you.
+					</p>
+				</div>
+				<div class="gallery-grid" id="galleryGrid">
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/1.jpg" alt="Us together" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/1.jpg</span>
+							</div>
+						</div>
+						<figcaption>My favourite smile</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/2.jpg" alt="A day out together" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/2.jpg</span>
+							</div>
+						</div>
+						<figcaption>Golden hour with you</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/3.jpg" alt="A memory of us" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/3.jpg</span>
+							</div>
+						</div>
+						<figcaption>That perfect day</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/4.jpg" alt="Laughing together" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/4.jpg</span>
+							</div>
+						</div>
+						<figcaption>Your laugh, my favourite sound</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/5.jpg" alt="A trip together" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/5.jpg</span>
+							</div>
+						</div>
+						<figcaption>Somewhere happy</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/6.jpg" alt="Just the two of us" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/6.jpg</span>
+							</div>
+						</div>
+						<figcaption>Just the two of us</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/7.jpg" alt="Making memories" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/7.jpg</span>
+							</div>
+						</div>
+						<figcaption>Making memories</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/8.jpg" alt="A quiet moment" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/8.jpg</span>
+							</div>
+						</div>
+						<figcaption>Quiet moments with you</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img
+								src="images/9.jpg"
+								alt="Forever my favourite"
+								loading="lazy"
+							/>
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/9.jpg</span>
+							</div>
+						</div>
+						<figcaption>Forever my favourite</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img
+								src="images/10.jpg"
+								alt="A memory I treasure"
+								loading="lazy"
+							/>
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/10.jpg</span>
+							</div>
+						</div>
+						<figcaption>A memory I treasure</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/11.jpg" alt="You and me" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/11.jpg</span>
+							</div>
+						</div>
+						<figcaption>You and me</figcaption>
+					</figure>
+					<figure class="photo reveal">
+						<div class="photo-frame">
+							<img src="images/12.jpg" alt="Our happy place" loading="lazy" />
+							<div class="photo-fallback">
+								<span class="photo-fallback-icon">📷</span
+								><span>Add images/12.jpg</span>
+							</div>
+						</div>
+						<figcaption>Our happy place</figcaption>
+					</figure>
+				</div>
+			</section>
+
+			<section class="reasons-section" id="reasons">
+				<div class="section-head reveal">
+					<p class="eyebrow">A few of many</p>
+					<h2 class="section-title">Reasons I love you</h2>
+					<p class="section-sub">Tap a card to see what's inside.</p>
+				</div>
+				<div class="reasons-grid">
+					<button class="reason-card reveal" type="button" aria-pressed="false">
+						<span class="reason-inner">
+							<span class="reason-front"
+								><span class="reason-index">01</span
+								><span class="reason-hint">tap</span></span
+							>
+							<span class="reason-back"
+								>Your smile can turn my worst day around.</span
+							>
+						</span>
+					</button>
+					<button class="reason-card reveal" type="button" aria-pressed="false">
+						<span class="reason-inner">
+							<span class="reason-front"
+								><span class="reason-index">02</span
+								><span class="reason-hint">tap</span></span
+							>
+							<span class="reason-back"
+								>The way you care for everyone around you.</span
+							>
+						</span>
+					</button>
+					<button class="reason-card reveal" type="button" aria-pressed="false">
+						<span class="reason-inner">
+							<span class="reason-front"
+								><span class="reason-index">03</span
+								><span class="reason-hint">tap</span></span
+							>
+							<span class="reason-back"
+								>Your laugh, especially the one you try to hide.</span
+							>
+						</span>
+					</button>
+					<button class="reason-card reveal" type="button" aria-pressed="false">
+						<span class="reason-inner">
+							<span class="reason-front"
+								><span class="reason-index">04</span
+								><span class="reason-hint">tap</span></span
+							>
+							<span class="reason-back"
+								>How you always believe in me, even when I don't.</span
+							>
+						</span>
+					</button>
+					<button class="reason-card reveal" type="button" aria-pressed="false">
+						<span class="reason-inner">
+							<span class="reason-front"
+								><span class="reason-index">05</span
+								><span class="reason-hint">tap</span></span
+							>
+							<span class="reason-back"
+								>Your strength, even on the hard days.</span
+							>
+						</span>
+					</button>
+					<button class="reason-card reveal" type="button" aria-pressed="false">
+						<span class="reason-inner">
+							<span class="reason-front"
+								><span class="reason-index">06</span
+								><span class="reason-hint">tap</span></span
+							>
+							<span class="reason-back"
+								>The little habits that make you, you.</span
+							>
+						</span>
+					</button>
+					<button class="reason-card reveal" type="button" aria-pressed="false">
+						<span class="reason-inner">
+							<span class="reason-front"
+								><span class="reason-index">07</span
+								><span class="reason-hint">tap</span></span
+							>
+							<span class="reason-back"
+								>How being with you feels like home.</span
+							>
+						</span>
+					</button>
+					<button class="reason-card reveal" type="button" aria-pressed="false">
+						<span class="reason-inner">
+							<span class="reason-front"
+								><span class="reason-index">08</span
+								><span class="reason-hint">tap</span></span
+							>
+							<span class="reason-back"
+								>The way you make me want to be better.</span
+							>
+						</span>
+					</button>
+				</div>
+			</section>
+
+			<section class="timeline-section" id="timeline">
+				<div class="section-head reveal">
+					<p class="eyebrow">Our story</p>
+					<h2 class="section-title">A timeline of us</h2>
+					<p class="section-sub">Every step led me to you.</p>
+				</div>
+				<ol class="timeline">
+					<li class="timeline-item reveal">
+						<div class="timeline-dot" aria-hidden="true"></div>
+						<div class="timeline-card">
+							<span class="timeline-date">The beginning</span>
+							<h3>The day we first met</h3>
+							<p>Add the date and a line about how it all started.</p>
+						</div>
+					</li>
+					<li class="timeline-item reveal">
+						<div class="timeline-dot" aria-hidden="true"></div>
+						<div class="timeline-card">
+							<span class="timeline-date">First date</span>
+							<h3>The first time I knew</h3>
+							<p>Add the date and what made that day unforgettable.</p>
+						</div>
+					</li>
+					<li class="timeline-item reveal">
+						<div class="timeline-dot" aria-hidden="true"></div>
+						<div class="timeline-card">
+							<span class="timeline-date">Three little words</span>
+							<h3>The first "I love you"</h3>
+							<p>Add the date and where you were when you said it.</p>
+						</div>
+					</li>
+					<li class="timeline-item reveal">
+						<div class="timeline-dot" aria-hidden="true"></div>
+						<div class="timeline-card">
+							<span class="timeline-date">Adventure</span>
+							<h3>Our favourite trip</h3>
+							<p>Add the date and your favourite memory from it.</p>
+						</div>
+					</li>
+					<li class="timeline-item reveal">
+						<div class="timeline-dot" aria-hidden="true"></div>
+						<div class="timeline-card">
+							<span class="timeline-date">Today</span>
+							<h3>Your 25th birthday</h3>
+							<p>
+								Another year of you to celebrate. And I get to be here for it.
+							</p>
+						</div>
+					</li>
+				</ol>
+			</section>
+
+			<section class="letter-section" id="letter">
+				<div class="section-head reveal">
+					<p class="eyebrow">From me to you</p>
+					<h2 class="section-title">A little letter</h2>
+				</div>
+				<div class="letter-card reveal" id="letterCard">
+					<div class="letter-text" id="letterText">
+						My dearest Sayang, Happy 25th birthday. Every year I think I
+						couldn't possibly love you more, and every year you prove me wrong.
+						Thank you for your patience, your laughter, and the quiet way you
+						make everything feel okay. Thank you for choosing me, again and
+						again. I hope this year brings you everything your heart desires —
+						and I hope I get to be there for all of it. With all my love, Haziq
+						Musa
+					</div>
+					<p class="letter-hint">tap the letter to finish it instantly</p>
+				</div>
+			</section>
+
+			<section class="cake-section" id="cakeSection">
+				<div class="section-head reveal">
+					<p class="eyebrow">Make a wish</p>
+					<h2 class="section-title">Blow out the candles</h2>
+					<p class="section-sub">Tap the cake and make a wish, sayang.</p>
+				</div>
+				<div
+					class="cake-scene reveal"
+					id="cakeScene"
+					role="button"
+					tabindex="0"
+					aria-label="Blow out the birthday candles"
+				>
+					<div class="candle-row" aria-hidden="true">
+						<div class="candle"><span class="flame"></span></div>
+						<div class="candle"><span class="flame"></span></div>
+						<div class="candle"><span class="flame"></span></div>
+					</div>
+					<div class="cake" aria-hidden="true">
+						<div class="cake-frosting"></div>
+						<div class="cake-body"></div>
+					</div>
+					<div class="plate" aria-hidden="true"></div>
+				</div>
+				<p class="cake-message" id="cakeMessage">
+					Happy birthday, Syazwani. Here's to 25 beautiful years. 🎂
+				</p>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p class="footer-big">Happy 25th, Sayang.</p>
+			<p class="footer-small">Made with love, for you.</p>
+			<p class="footer-tiny">12 · 11 · 2026</p>
+		</footer>
+
+		<button
+			class="music-toggle"
+			id="musicToggle"
+			type="button"
+			aria-label="Play background music"
+			aria-pressed="false"
+			title="Play music"
+		>
+			<span class="music-icon" id="musicIcon" aria-hidden="true">▶</span>
+			<span class="music-ring" aria-hidden="true"></span>
+		</button>
+		<audio id="bgMusic" loop preload="none">
+			<source
+				src="music/Raim%20Laode%20-%20Dunia%20Yang%20Nanti%20-%20Raim%20Laode.mp3"
+				type="audio/mpeg"
+			/>
+		</audio>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>
