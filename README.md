@@ -21,9 +21,9 @@ use fewer photos, delete the extra `<figure>` blocks in `index.html`.
 
 Save the track as `music/Raim Laode - Dunia Yang Nanti - Raim Laode.mp3` (the
 path already referenced in `index.html`), or rename your file and update the
-`<source>` tag. The page tries to autoplay the song. Most browsers block audio until the visitor
-interacts, so if autoplay is refused it starts on the first tap, scroll or
-keypress. The floating button in the bottom-right toggles it on and off.
+`<source>` tag. Browsers block unmuted autoplay, so the page opens with a
+tap-to-open envelope; tapping it starts the song, which is a valid user gesture.
+The floating button in the bottom-right toggles the music on and off.
 
 ## Personalise
 
@@ -31,7 +31,8 @@ keypress. The floating button in the bottom-right toggles it on and off.
 - Age / birthday logic: edit `CONFIG` at the top of `js/script.js`.
   `birthdayMonthIndex: 10` is **November** (months are zero-based), `birthdayDay: 12`.
 - Letter signature: replace `[Your Name]` in the letter.
-- Timeline: replace the placeholder dates and sentences in the timeline section.
+- Timeline: the "Our story so far" chapters are date-free — edit the titles and
+  lines in the timeline section if you want to personalise them.
 
 The countdown automatically shows a celebration message on her birthday and
 counts down to the next one on every other day.

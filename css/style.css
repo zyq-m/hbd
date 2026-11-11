@@ -95,6 +95,13 @@ section {
   inset: 0;
   pointer-events: none;
   overflow: hidden;
+  z-index: 0;
+}
+
+main,
+.hero,
+.footer {
+  position: relative;
   z-index: 1;
 }
 
@@ -1028,4 +1035,208 @@ section {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+body.intro-locked {
+  overflow: hidden;
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  background:
+    radial-gradient(820px 520px at 50% -10%, #fbe6ea 0%, transparent 62%),
+    radial-gradient(720px 520px at 50% 110%, #f7ece0 0%, transparent 60%),
+    var(--cream);
+  transition: opacity 0.9s ease, visibility 0.9s ease;
+  overscroll-behavior: none;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  width: min(560px, 120vw);
+  height: min(560px, 120vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 200, 140, 0.4), rgba(245, 210, 220, 0.25) 45%, transparent 68%);
+  filter: blur(28px);
+  animation: glowPulse 9s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.intro.is-open {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 460px;
+  animation: introIn 0.9s ease both;
+}
+
+@keyframes introIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: clamp(0.68rem, 2.6vw, 0.78rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-weight: 500;
+}
+
+.intro-title {
+  margin: 0 0 clamp(1.4rem, 5vw, 2rem);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 9vw, 3.2rem);
+  line-height: 1.05;
+  background: linear-gradient(120deg, #a8762a 0%, #e6c86a 40%, #b8862f 70%, #dcb85a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.envelope {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  width: clamp(220px, 68vw, 300px);
+  aspect-ratio: 3 / 2;
+  cursor: pointer;
+  perspective: 900px;
+  filter: drop-shadow(0 22px 30px rgba(120, 60, 75, 0.24));
+  animation: envelopeBob 3.6s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.envelope:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 10px;
+  border-radius: 14px;
+}
+
+@keyframes envelopeBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.2deg);
+  }
+}
+
+.envelope-body {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #f6d3db, #e9a9ba);
+  box-shadow: inset 0 -10px 26px rgba(160, 70, 90, 0.18);
+}
+
+.envelope-letter {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 8%;
+  height: 74%;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #fffaf5, #fff0e6);
+  box-shadow: 0 4px 14px rgba(120, 60, 75, 0.14);
+  z-index: 1;
+  transition: transform 0.6s ease 0.15s;
+}
+
+.envelope-letter::after {
+  content: "♥";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(201, 162, 39, 0.28);
+  font-size: 1.7rem;
+}
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #f2c4cf, #e39aad);
+  clip-path: polygon(0 100%, 0 0, 50% 58%, 100% 0, 100% 100%);
+  z-index: 2;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 62%;
+  background: linear-gradient(180deg, #f3c6d1, #e19aac);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  transform: rotateX(0deg);
+  transition: transform 0.75s cubic-bezier(0.4, 0.1, 0.2, 1), opacity 0.55s ease 0.1s;
+  z-index: 3;
+}
+
+.envelope-seal {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(38px, 12vw, 48px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e9cf78, #b8862f 72%);
+  color: #fff8e6;
+  font-size: clamp(1rem, 3.6vw, 1.2rem);
+  box-shadow: 0 4px 10px rgba(120, 60, 75, 0.32), inset 0 0 0 2px rgba(255, 248, 230, 0.35);
+  z-index: 4;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.intro.opening .envelope-flap {
+  transform: rotateX(165deg);
+  opacity: 0;
+}
+
+.intro.opening .envelope-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.2) rotate(24deg);
+}
+
+.intro.opening .envelope-letter {
+  transform: translateY(-14%);
+}
+
+.intro-hint {
+  margin: clamp(1.4rem, 5vw, 1.9rem) 0 0;
+  font-family: var(--script);
+  font-size: clamp(1.2rem, 4.4vw, 1.5rem);
+  color: var(--rose-deep);
 }

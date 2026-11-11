@@ -328,38 +328,6 @@ if (audio && musicToggle) {
   const source = audio.querySelector("source");
   if (source) source.addEventListener("error", markMusicUnavailable);
 
-  function startMusic() {
-    if (!audio.paused) return;
-    const attempt = audio.play();
-    if (attempt && typeof attempt.catch === "function") {
-      attempt.catch(() => {});
-    }
-  }
-
-  function clearGestureListeners() {
-    window.removeEventListener("pointerdown", onFirstGesture);
-    window.removeEventListener("touchstart", onFirstGesture);
-    window.removeEventListener("keydown", onFirstGesture);
-    window.removeEventListener("scroll", onFirstGesture);
-  }
-
-  function onFirstGesture(event) {
-    const target = event.target;
-    if (target && target.nodeType && musicToggle.contains(target)) {
-      clearGestureListeners();
-      return;
-    }
-    clearGestureListeners();
-    startMusic();
-  }
-
-  function enableGestureFallback() {
-    window.addEventListener("pointerdown", onFirstGesture, { passive: true });
-    window.addEventListener("touchstart", onFirstGesture, { passive: true });
-    window.addEventListener("keydown", onFirstGesture);
-    window.addEventListener("scroll", onFirstGesture, { passive: true });
-  }
-
   musicToggle.addEventListener("click", () => {
     if (!audio.paused) {
       audio.pause();
@@ -370,17 +338,45 @@ if (audio && musicToggle) {
       attempt.catch(markMusicUnavailable);
     }
   });
+}
 
-  const autoplayAttempt = audio.play();
-  if (autoplayAttempt && typeof autoplayAttempt.catch === "function") {
-    autoplayAttempt.catch(enableGestureFallback);
+const intro = document.getElementById("intro");
+const introOpen = document.getElementById("introOpen");
+let surpriseOpened = false;
+
+function openSurprise() {
+  if (surpriseOpened) return;
+  surpriseOpened = true;
+
+  if (audio && typeof audio.play === "function") {
+    const attempt = audio.play();
+    if (attempt && typeof attempt.catch === "function") {
+      attempt.catch(() => {});
+    }
+  }
+
+  document.body.classList.remove("intro-locked");
+  document.documentElement.classList.remove("intro-locked");
+
+  if (intro) {
+    intro.classList.add("opening");
+    window.setTimeout(() => intro.classList.add("is-open"), 500);
+    window.setTimeout(() => {
+      intro.hidden = true;
+      intro.remove();
+    }, 1400);
+  }
+
+  window.setTimeout(() => {
+    burstConfetti(window.innerWidth / 2, window.innerHeight * 0.32, 110);
+  }, 950);
+}
+
+if (intro) {
+  intro.addEventListener("click", openSurprise);
+  if (introOpen) {
+    introOpen.addEventListener("click", openSurprise);
   }
 }
 
 createHearts();
-
-if (!prefersReducedMotion) {
-  window.setTimeout(() => {
-    burstConfetti(window.innerWidth / 2, window.innerHeight * 0.28, 70);
-  }, 700);
-}
